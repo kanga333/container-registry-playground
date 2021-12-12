@@ -29,5 +29,5 @@ jobs:
       - name: Pull and push Container Image
         run: |
           docker pull alpine:3.14
-          docker tag alpine:3.14 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/child:latest
-          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/child:latest
+          docker tag alpine:3.14 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-suffix:latest
+          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-suffix:latest
