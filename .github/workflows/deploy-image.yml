@@ -42,7 +42,20 @@ jobs:
       - name: Delete Package versions
         run: |
           curl \
+          -H "Accept: application/vnd.github.v3+json" \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          https://api.github.com/users/kanga333/packages/container/container-registry-playground/versions/11683686
+          curl \
+          -H "Accept: application/vnd.github.v3+json" \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          https://api.github.com/users/kanga333/packages/container/container-registry-playground/versions/sha256:5e604d3358ab7b6b734402ce2e19ddd822a354dc14843f34d36c603521dbb4f9
+          curl \
           -X DELETE \
           -H "Accept: application/vnd.github.v3+json" \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           https://api.github.com/users/kanga333/packages/container/container-registry-playground/versions/11683686
+          curl \
+          -X DELETE \
+          -H "Accept: application/vnd.github.v3+json" \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          https://api.github.com/users/kanga333/packages/container/container-registry-playground/versions/sha256:5e604d3358ab7b6b734402ce2e19ddd822a354dc14843f34d36c603521dbb4f9
