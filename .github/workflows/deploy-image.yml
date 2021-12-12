@@ -31,3 +31,9 @@ jobs:
           docker pull alpine:3.14
           docker tag alpine:3.14 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:hoge
           docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:hoge
+      
+      - name: Get All Package versions
+        run: |
+          curl \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/users/kanga333/packages/container/container-registry-playground/versions
