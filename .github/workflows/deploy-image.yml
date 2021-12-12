@@ -36,4 +36,5 @@ jobs:
         run: |
           curl \
           -H "Accept: application/vnd.github.v3+json" \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           https://api.github.com/users/kanga333/packages/container/container-registry-playground/versions
